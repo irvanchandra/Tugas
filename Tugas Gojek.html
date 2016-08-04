@@ -1,0 +1,70 @@
+<html>
+<head><title>gojekindonesia.com</title></head>
+<body  background="../../../background-A-web.jpg" bgcolor="#7FDF55"><br><br>
+<b><font color="Green" size="10"><b><div align="center">Halaman Visitor</div></b></font></b><br>
+<script type="text/javascript">
+function valregister(){
+            var x=register.txtname.value;
+            var x1=parseInt(x);
+            if(register.txtname.value==""){
+                        alert("Nama masih kosong");
+                        register.txtname.focus();
+                        return false;
+            }
+            if(isNaN(x1)==false){
+                        alert("Nama harus huruf");
+                        register.txtname.focus();
+                        return false;          
+            }
+            var y=register.txtemail.value;
+            if(y==""){
+                        alert("Alamat Email masih kosong");
+                        register.txtemail.focus();
+                        return false;
+            }else{
+            var atpos=y.indexOf("@");
+            var dotpos=y.lastIndexOf(".");
+            if (atpos<1 || dotpos<atpos+2 || dotpos+2>=y.length){
+                        alert("Alamat Email Tidak Valid");
+                        register.txtemail.focus();
+                        return false;
+            }
+			var z=register.txtnomor.value;
+            if(z==""){
+                        alert("Phone number masih kosong");
+                        register.txtnomor.focus();
+                        return false;
+			}
+			var w=register.txtoccup.value;
+            if(w==""){
+                        alert("Occupation masih kosong");
+                        register.txtoccup.focus();
+                        return false;
+			}}
+}
+</script>
+<form name="register" action="Terimakasih.php" method="Post" enctype="multipart/form-data" onSubmit="return valregister()">
+  <table width="378" height="253" align="center">
+		
+  <tr>
+			<td width="290"><input  height="33"  width="290" name="txtname" placeholder="Username" type="text" id="txtname" value="" size="50"><br></td>
+            </tr>
+
+        <tr>
+			<td width="290"><input height="33" width="290" name="txtemail" placeholder="Email Address" type="text" id="txtemail" size="50"></td>
+            </tr>
+        <tr>
+    
+			<td width="290"><input height="33" width="290" placeholder="Phone Number" name="txtnomor" id="demo3" type="txtnomor" size="50"></td>
+           
+
+		<tr>
+			<td width="290"><input height="33" width="290" placeholder="Occupation" name="txtoccup" id="txtoccup" type="text" size="50"></td>
+    </tr>
+            <tr>
+            <td width="290"><input name="save" type="submit" id="save" value="Sign Up"></td>
+            
+      	</tr>
+      </table>
+  
+</form>
